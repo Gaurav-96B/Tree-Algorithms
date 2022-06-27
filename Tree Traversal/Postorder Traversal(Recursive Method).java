@@ -1,17 +1,18 @@
-class Solution {
-    List<Integer>ans=new ArrayList<>();
-    public List<Integer> postorderTraversal(TreeNode root) {
-        postOrderTree(root);
+ArrayList<Integer> postOrder(Node root) {
+        ArrayList<Integer>ans=new ArrayList<>();
+        postOrderTraversal(root,ans);
         return ans;
+     
     }
-    public void postOrderTree(TreeNode root)
+    public void postOrderTraversal(Node root,ArrayList<Integer>ans)
     {
         if(root==null)
         {
             return;
         }
-        postOrderTree(root.left);
-        postOrderTree(root.right);
-        ans.add(root.val);
+        postOrderTraversal(root.left,ans);
+        postOrderTraversal(root.right,ans);
+        ans.add(root.data);
     }
-}
+     
+    
