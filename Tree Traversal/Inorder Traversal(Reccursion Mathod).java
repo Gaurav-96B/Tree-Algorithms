@@ -1,17 +1,15 @@
-class Solution {
-    List<Integer>ans=new ArrayList<>();
-    public List<Integer> inorderTraversal(TreeNode root) {
-        inorderTraversalTree(root);
-        return ans;
+ArrayList<Integer> inOrder(Node root) {
+      ArrayList<Integer>ans=new ArrayList<>();
+      inorderTraversal(root,ans);
+      return ans;
     }
-    public void inorderTraversalTree(TreeNode root)
+    void inorderTraversal(Node root,ArrayList<Integer>ans)
     {
-       if(root==null) 
-       {
-           return;
-       }
-        inorderTraversalTree(root.left);
-        ans.add(root.val);
-        inorderTraversalTree(root.right);
+        if(root==null)
+        {
+            return;
+        }
+        inorderTraversal(root.left,ans);
+        ans.add(root.data);
+        inorderTraversal(root.right,ans);
     }
-}
