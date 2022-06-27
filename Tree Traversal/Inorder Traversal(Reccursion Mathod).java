@@ -3,7 +3,7 @@ ArrayList<Integer> inOrder(Node root) {
       inorderTraversal(root,ans);
       return ans;
     }
-    void inorderTraversal(Node root,ArrayList<Integer>ans)
+    public void inorderTraversal(Node root,ArrayList<Integer>ans)
     {
         if(root==null)
         {
